@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <h1>Welcome to the app</h1>
+    <script>
+    let endpoint = "http://local.analytics.io:8081";
+    if (window.location.host.endsWith("appspot.com")) {
+      endpoint = "https://analytics-dot-local-storage-security.appspot.com";
+    }
+    (function(i, s, o, g) {
+      (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m);
+    })(window, document, "script", `${endpoint}/analytics.js`);
+    </script>
+  </body>
+</html>
